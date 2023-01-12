@@ -2,9 +2,15 @@ function add(number1, number2){
   return number1 + number2;
 };
 
+function subtract(number1, number2){
+  return number1 - number2;
+}
+
 function calculator(number1, number2, operator){
   if (operator === "+") {
-    return number1 + number2;
+    return add(number1, number2);
+  } else if (operator === "-"){
+    return subtract(number1, number2);
   }
 };
 
@@ -21,7 +27,7 @@ function handleCalculation(event) {
   const answer = calculator(number1, number2, operator);
 
   // result
-  let nums = "Display numbers: " +  number1 + " " + operator + " " + number2 + " " + answer;
+  let nums = "Display numbers: " +  number1 + " " + operator + " " + number2 + " = " + answer;
 
   document.getElementById("result").innerText = nums;
 
