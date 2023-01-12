@@ -26,7 +26,9 @@ function calculator(number1, number2, operator){
   } else ( "Select an operator");
 };
 
-
+function errorMessage(){
+ return  "Enter #s/make selections."
+}
 // User Interface Logic
 function handleCalculation(event) {
   event.preventDefault();
@@ -37,13 +39,16 @@ function handleCalculation(event) {
   const operator = document.getElementById("operator").value;
 
   const answer = calculator(number1, number2, operator);
-
-  // result
-  let nums = "Display numbers: " +  number1 + " " + operator + " " + number2 + " = " + answer;
-
-  document.getElementById("result").innerText = nums;
-
-}
+  
+  const nums = "Display numbers: " +  number1 + " " + operator + " " + number2 + " = " + answer;
+  
+  if (Number.isInteger(number1) || Number.isInteger(number2)){
+    document.getElementById("result").innerText = nums;
+    
+  } else {
+    document.getElementById("result").innerText = errorMessage();
+  }
+};
 
 window.addEventListener("load", function() {
   const form = document.getElementById("form");
