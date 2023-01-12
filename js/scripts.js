@@ -26,12 +26,13 @@ function handleCalculation(event) {
 
   const number1 = parseInt(document.getElementById("number-1-id").value);
   const number2 = parseInt(document.getElementById("number-2-id").value);
+  const operator = document.getElementById("operator").value;
 
 
 console.log("Num1&num2: ", number1, number2);
 
   // result
-let nums = "Display numbers" +  number1 + " and " + number2;
+let nums = "Display numbers: " +  number1 + " " + operator + " " + number2;
 
 document.getElementById("result").innerText = nums;
 
