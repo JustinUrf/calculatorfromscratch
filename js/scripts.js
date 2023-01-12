@@ -23,9 +23,8 @@ function calculator(number1, number2, operator){
     return multiply(number1, number2);
   } else if (operator === "/") {
     return divide(number1, number2);
-  } else ( "Select an operator");
-};
-
+  }
+}
 function errorMessage(){
  return  "Enter #s/make selections."
 }
@@ -44,13 +43,15 @@ function handleCalculation(event) {
   
   if (Number.isInteger(number1) || Number.isInteger(number2)){
     document.getElementById("result").innerText = nums;
-    
+    // document.getElementById("error-message").removeAttribute("hidden");
+    // document.getElementById("error-message").removeAtttribute("error-message")
   } else {
+    // document.getElementById("error-message").removeAttribute("hidden");
     document.getElementById("result").innerText = errorMessage();
   }
-};
+}
 
 window.addEventListener("load", function() {
   const form = document.getElementById("form");
   form.addEventListener("submit", handleCalculation);
-});
+})
